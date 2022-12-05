@@ -1,0 +1,29 @@
+<div *ngIf="show" class="modal" tabindex="-1" role="dialog" style="display:block!important">    
+    <div class="modal-dialog custom-alert" role="document">    
+        <div class="modal-content">    
+            <div class="modal-body">
+                <h5 class="text-center">Enter Task Details</h5> 
+                <form method="get" class="form-group" name="new-task">
+                    <input type="text" name="title" id="title" class="form-control my-2" [(ngModel)]='task.title'  (ngModelChange)='validate($event,"title")' placeholder="Title" required>
+                    <textarea type="text" name="description" id="description" class="form-control my-2" [(ngModel)]='task.description' (ngModelChange)='validate($event,"description")' placeholder="Task Description" required></textarea>
+                    <select name="priority" id="priority" class="form-control form-select my-2"  [(ngModel)]='task.priority' (ngModelChange)='validate($event,"priority")' required>
+                        <option value="">Select Priority</option>
+                        <option value="2">High</option>
+                        <option value="1">Medium</option>  
+                        <option value="0">Low</option>
+                    </select>
+                    <select name="status" id="status" class="form-control form-select"  [(ngModel)]='task.status' (ngModelChange)='validate($event,"status")'>
+                        <option value="">Select status</option>
+                        <option value="new">New</option>
+                        <option value="inProgress">In Progress</option>  
+                        <option value="completed">Completed</option>
+                    </select>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" id = "save" class="btn btn-success mt-3" (click)='saveTask()'>Save Task</button>
+                        <button type="button"  class="btn btn-danger mt-3" (click)='toggleDialog()'>Cancel</button>
+                    </div>
+                </form>     
+            </div>    
+        </div>    
+    </div>    
+</div>    

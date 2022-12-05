@@ -1,0 +1,14 @@
+.toolbar {
+    padding: 0px 30px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid gray;
+    justify-content: space-between;
+  }
+.app-name{
+  color: #1976d2;
+  font-size: large;
+}

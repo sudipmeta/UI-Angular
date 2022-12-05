@@ -1,0 +1,10 @@
+.btn-container{
+    flex: 1;
+    display: flex;
+}
+.content-container{
+    flex:5
+}
+img{
+    margin: 10px;
+}

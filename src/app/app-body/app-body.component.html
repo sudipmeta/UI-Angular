@@ -1,0 +1,36 @@
+<div class="mt-1">
+    <app-confirm-dialog></app-confirm-dialog>
+    <div class="row">
+        <div class="col-xs-12 col-md-4 px-md-2 mb-3" >
+            <div class="task" style="border:2px solid red; overflow:auto;">
+                <task-header></task-header>
+                <div *ngFor='let task of Tasks; let index = index;'>
+                    <div *ngIf="task.status == 'new' ">
+                        <task-card [task]=task [index]=index></task-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4 px-md-2 mb-3 overflow-auto">
+            <div class="task"  style="border:2px solid yellow;">
+                <task-header title="In Progress"></task-header>
+                <div *ngFor='let task of Tasks; let index = index;'>
+                    <div *ngIf="task.status == 'inProgress' ">
+                    <task-card [task]="task" [index] = index></task-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4 px-md-2 mb-3 overflow-auto">
+        <div class="task"  style="border:2px solid greenyellow;">
+            <task-header title="Completed"></task-header>
+            <div *ngFor='let task of Tasks; let index = index;'>
+                <div *ngIf="task.status == 'completed' ">
+                    <task-card [task]="task" [index] = index></task-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
